@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallBounce : MonoBehaviour
 {
+    [SerializeField] GameObject hitSFX;
+
     [SerializeField] BallMovement ballMovement;
     [SerializeField] ScoreManager scoreManager;
 
@@ -49,5 +51,7 @@ public class BallBounce : MonoBehaviour
             ballMovement.player1Start = false;
             StartCoroutine(ballMovement.Launch());
         }
+
+        Instantiate(hitSFX, this.transform.position, Quaternion.identity);
     }
 }
