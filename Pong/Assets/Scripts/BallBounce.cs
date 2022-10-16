@@ -52,6 +52,6 @@ public class BallBounce : MonoBehaviour
             StartCoroutine(ballMovement.Launch());
         }
 
-        Instantiate(hitSFX, this.transform.position, Quaternion.identity);
+        ObjectPooling.Instant.playSound();
     }
 }
